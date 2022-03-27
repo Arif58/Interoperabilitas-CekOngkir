@@ -14,7 +14,7 @@ include "getProvince.php";
   </head>
   <body>
 
-  <div class="jumbotron text-center">
+  <div class="jumbotron text-center" style="background-color: #A5C9D6">
     <h1>Hitung Ongkir!</h1>
     <p>Yuk Hitung Ongkir Kalian Yuk!</p> 
   </div>
@@ -25,7 +25,7 @@ include "getProvince.php";
         <h3>Kota Asal</h3>
         <h6>Provinsi</h6>
         <select name="provinsi_asal" onchange="findOriginCity(this.value)">
-          <option>-- Pilih Provinsi --</option>
+          <option disabled selected>-- Pilih Provinsi --</option>
           <?php 
             foreach ($data->rajaongkir->results as $provinsi){
               echo '<option value="'.$provinsi->province_id.'">'.$provinsi->province.'</option>';
@@ -42,7 +42,7 @@ include "getProvince.php";
         <h3>Kota Tujuan</h3>
         <h6>Provinsi</h6>
         <select name="provinsi_tujuan" onchange="findDestinationCity(this.value)">
-          <option>-- Pilih Provinsi --</option>
+          <option disabled selected>-- Pilih Provinsi --</option>
           <?php 
             foreach ($data->rajaongkir->results as $provinsi){
               echo '<option value="'.$provinsi->province_id.'">'.$provinsi->province.'</option>';
@@ -59,7 +59,7 @@ include "getProvince.php";
         <h3>Kurir & Barang</h3>        
         <h6>Kurir</h6>
         <select id="kurir" name="kurir">
-          <!-- <option>-- Pilih Kurir --</option> -->
+          <option disabled selected>-- Pilih Kurir --</option>
           <option value="jne">JNE</option>
           <option value="pos">POS</option>
           <option value="tiki">TIKI</option>         
